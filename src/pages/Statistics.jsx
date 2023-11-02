@@ -12,7 +12,7 @@ export default function Statistics() {
 
   const { data: gitHubFollowers } = useFetch(`https://api.github.com/users/${username}/followers`);
   const { data: gitHubRepos } = useFetch(`https://api.github.com/users/${username}/repos?per_page=100&page=1`);
-  const { data: gitHubStars } = useFetch(`https://api.github.com/users/${username}/starred?per_page=100`);
+  const { data: gitHubStars } = useFetch(`https://api.github.com/users/${username}/starred?per_page=100&page=1`);
 
   useEffect(() => {
      const getBlogs = async () => {
