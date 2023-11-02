@@ -6,7 +6,7 @@ function Comments() {
     script.src = 'https://utteranc.es/client.js';
     script.async = true;
     script.setAttribute('repo', 'Re4ch-Jay/phatpanhreach'); // Replace with your repository name
-    script.setAttribute('issue-term', 'title');
+    script.setAttribute('issue-term', 'url');
     script.setAttribute('theme', 'github-dark');
     script.setAttribute('crossorigin', 'anonymous');
     document.getElementById('utterances-container').appendChild(script);
