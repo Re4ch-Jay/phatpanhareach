@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown'
-import Comments from './Comments';
+import Comments from '../components/Comments';
 
 export default function BlogDetail() {
     const markdown = 

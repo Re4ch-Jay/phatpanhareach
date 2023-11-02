@@ -1,23 +1,39 @@
-import React from 'react'
+import {useState, useEffect} from 'react'
 import Card from '../components/Card'
 import { NavLink } from "react-router-dom"
+import db from "../firebase";
+import { collection, getDocs } from 'firebase/firestore';
 
 export default function BlogPage() {
+
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+     const getBlogs = async () => {
+      try {
+        const data = await getDocs(collection(db, "blogs"))
+        setBlogs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      } catch (error) {
+        console.log(error)
+      }
+     }
+     getBlogs();
+  },[]);
+
   return (
     <div className='container mx-auto max-w-screen-lg px-4 py-5'>
       <div className='grid grid-cols-2 justify-between items-center gap-5'>
-       <BlogCard title={'First Blog'} description={'First Blog'} technologies={['JS']} link={'1'}/>
-       <BlogCard title={'First Blog'} description={'First Blog'} technologies={['JS']} link={'1'}/>
-       <BlogCard title={'First Blog'} description={'First Blog'} technologies={['JS']} link={'1'}/>
-       <BlogCard title={'First Blog'} description={'First Blog'} technologies={['JS']} link={'1'}/>
+        {blogs.map(blog => (
+          <BlogCard title={blog.title} description={blog.description} technologies={blog.technologies} link={blog.id}/>
+        ))}
       </div>
     </div>
   )
 }
 
-function BlogCard({title, description, technologies, link}) {
+function BlogCard({title, description, technologies, link, ...props}) {
   return (
-    <NavLink to={link}>
+    <NavLink to={link} {...props}>
     <Card className="h-72 md:h-36">
       <>
         <p className="text-xl font-bold">{title}</p>

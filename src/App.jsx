@@ -3,7 +3,7 @@ import PageLayout from "./layouts/PageLayout";
 import HomePage from "./pages/HomePage";
 import BlogPage from "./pages/BlogPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import BlogDetail from "./components/BlogDetail";
+import BlogDetail from "./pages/BlogDetail";
 
 function App() {
 
