@@ -21,7 +21,7 @@ export default function BlogDetail() {
   }, [id]);
 
   return (
-    <div className="container mx-auto max-w-screen-lg px-4 py-5 bg-gray-900 rounded-lg shadow-lg">
+    <div className="container mx-auto max-w-screen-lg px-4 py-5 bg-gray-900 rounded-lg shadow-lg mt-10">
       <div className='max-w-screen-lg text-white'>
         <h1 className="text-white text-2xl font-bold">{blog.title}</h1>
         <h4 className="text-lg text-white">{blog.description}</h4>

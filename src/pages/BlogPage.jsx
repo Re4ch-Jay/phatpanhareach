@@ -34,7 +34,7 @@ export default function BlogPage() {
 function BlogCard({title, description, technologies, link, ...props}) {
   return (
     <NavLink to={link} {...props}>
-    <Card className="h-72 md:h-36">
+    <Card className="sm:h-28 md:h-36">
       <>
         <p className="text-xl font-bold">{title}</p>
         <p className="text-base">{description}</p>
