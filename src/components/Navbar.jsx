@@ -9,6 +9,7 @@ export default function Navbar() {
             <div className="flex flex-row justify-between items-center gap-2 md:gap-5">
                 <NavLink to='/' className="text-white text-xs md:text-base hover:underline cursor-pointer">Home</NavLink>
                 <NavLink to='blogs'  className="text-white text-xs md:text-base hover:underline cursor-pointer">Blog</NavLink>
+                <NavLink to='statistics'  className="text-white text-xs md:text-base hover:underline cursor-pointer">Statistics</NavLink>
             </div>
         </div>
     </div>

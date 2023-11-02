@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function Hero() {
+  
   return (
     <div className="p-8 rounded-lg shadow-lg mx-auto max-w-screen-lg mt-20">
       <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-5">

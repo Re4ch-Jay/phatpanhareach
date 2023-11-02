@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import BlogPage from "./pages/BlogPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import BlogDetail from "./pages/BlogDetail";
+import Statistics from "./pages/Statistics";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" Component={HomePage}/> {/* 👈 Renders at /app/ */}
             <Route path="/blogs" Component={BlogPage}/> {/* 👈 Renders at /app/ */}
             <Route path="/blogs/:id" Component={BlogDetail}/> {/* 👈 Renders at /app/ */}
+            <Route path="/statistics" Component={Statistics}/> {/* 👈 Renders at /app/ */}
           </Routes>
       </PageLayout>
     </BrowserRouter>
