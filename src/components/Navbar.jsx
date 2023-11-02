@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from "react-router-dom"
 
 export default function Navbar() {
   return (
@@ -6,8 +7,8 @@ export default function Navbar() {
         <div className="flex flex-row justify-between items-center">
             <div className="text-white font-bold text-sm md:text-lg cursor-pointer">Phat Panhareach</div>
             <div className="flex flex-row justify-between items-center gap-2 md:gap-5">
-                <div className="text-white text-xs md:text-base hover:underline cursor-pointer">Home</div>
-                <div className="text-white text-xs md:text-base hover:underline cursor-pointer">Blog</div>
+                <NavLink to='/' className="text-white text-xs md:text-base hover:underline cursor-pointer">Home</NavLink>
+                <NavLink to='blogs'  className="text-white text-xs md:text-base hover:underline cursor-pointer">Blog</NavLink>
             </div>
         </div>
     </div>
