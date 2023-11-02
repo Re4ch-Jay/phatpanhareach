@@ -12,7 +12,7 @@ export default function Statistics() {
 
   const { data: gitHubFollowers } = useFetch(`https://api.github.com/users/${username}/followers`);
   const { data: gitHubRepos } = useFetch(`https://api.github.com/users/${username}/repos?per_page=100&page=1`);
-  const { data: gitHubStars } = useFetch(`https://api.github.com/users/${username}/starred?per_page=100&page=1`);
+  const { data: gitHubStars } = useFetch(`https://api.github-star-counter.workers.dev/user/${username}`);
 
   useEffect(() => {
      const getBlogs = async () => {
@@ -27,13 +27,13 @@ export default function Statistics() {
      getBlogs();
   },[]);
 
-
   return (
     <div className='container mx-auto max-w-screen-lg px-4 py-5'>
       <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5'>
-          <StatisticCard title='GitHub Followers' followersCount={gitHubFollowers.length} link={'https://github.com/Re4ch-Jay'} />
-          <StatisticCard title='GitHub Project Repos' followersCount={gitHubRepos.length} link={'https://github.com/Re4ch-Jay'} />
-          <StatisticCard title='GitHub Stars' followersCount={gitHubStars.length} link={'https://github.com/Re4ch-Jay'} />
+          <StatisticCard title='GitHub Followers' followersCount={gitHubFollowers.length} link={'https://github.com/Re4ch-Jay'} target='_blank'  />
+          <StatisticCard title='GitHub Project Repos' followersCount={gitHubRepos.length} link={'https://github.com/Re4ch-Jay'} target='_blank' />
+          <StatisticCard title='GitHub Stars' followersCount={gitHubStars.stars} link={'https://github.com/Re4ch-Jay'} target='_blank' />
+          <StatisticCard title='GitHub Forks' followersCount={gitHubStars.forks} link={'https://github.com/Re4ch-Jay'} target='_blank' />
           <StatisticCard title='Blogs Count' followersCount={blogCount} link={'/blogs'} />
       </div>
     </div>
@@ -42,7 +42,7 @@ export default function Statistics() {
 
 function StatisticCard({title, followersCount, link, ...props}) {
   return (
-    <NavLink to={link} {...props} target='_blank'>
+    <NavLink to={link} {...props}>
     <Card className="sm:h-28 md:h-24">
       <>
         <p className="text-base">{title}</p>
