@@ -22,7 +22,7 @@ export default function BlogPage() {
 
   return (
     <div className='container mx-auto max-w-screen-lg px-4 py-5'>
-      <div className='grid grid-cols-2 justify-between items-center gap-5'>
+      <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5'>
         {blogs.map(blog => (
           <BlogCard title={blog.title} description={blog.description} technologies={blog.technologies} link={blog.id}/>
         ))}
