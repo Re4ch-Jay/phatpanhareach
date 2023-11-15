@@ -10,10 +10,12 @@ export default function Technologies() {
             <Technology name='PHP' img="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png"/>
             <Technology name='JavaScript' img="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png "/>
             <Technology name='C# .NET' img="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png"/>
+            <Technology name='Java' img="https://upload.wikimedia.org/wikipedia/de/thumb/e/e1/Java-Logo.svg/1200px-Java-Logo.svg.png"/>
             <Technology name='Dart' img="https://upload.wikimedia.org/wikipedia/commons/c/c6/Dart_logo.png"/>
             <Technology name='Laravel' img="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1969px-Laravel.svg.png"/>
             <Technology name='React' img="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"/>
             <Technology name='ASP.Net' img="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png"/>
+            <Technology name='Spring Boot' img="https://dz2cdn1.dzone.com/storage/temp/12434118-spring-boot-logo.png"/>
             <Technology name='Node' img="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png"/>
             <Technology name='Flutter' img="https://seeklogo.com/images/F/flutter-logo-5086DD11C5-seeklogo.com.png"/>
             <Technology name='Tailwind' img="https://files.raycast.com/nwt9ncojkvwmjfkaada8upafvpnu"/>
