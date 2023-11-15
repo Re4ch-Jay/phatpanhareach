@@ -18,7 +18,7 @@ export default function Audio() {
   return (
     <div className="fixed bottom-0 right-0 p-4">
       <audio className="hidden" ref={audioRef} controls autoPlay loop>
-        <source src="src\assets\music.mp3" type="audio/mp3" />
+        <source src="public\music.mp3" type="audio/mp3" />
         Your browser does not support the audio element.
       </audio>
       <div className="group relative">
