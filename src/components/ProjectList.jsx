@@ -14,6 +14,8 @@ export default function ProjectList() {
           <ProjectCard title="Book Store Mobile App" description="Buy book from home is better!" technologies={['Flutter']} link='https://github.com/Re4ch-Jay/Book-Store' />
           <ProjectCard title="Ecommerce Mobile App" description="Shopping at home is better!" technologies={['Flutter']} link='https://github.com/Re4ch-Jay/Ecommerce-Flutter' />
           <ProjectCard title="Student Management System" description="Minimal Student Management System with Authentication & Authorization" technologies={['Laravel', 'MySQL']} link='https://github.com/Re4ch-Jay/Simple-Student-Management' />
+          <ProjectCard title="Banking System" description="Simple Banking System that include some of the core functionalities of Core Banking system" technologies={['Spring Boot', 'Postgresql', "Java"]} link='https://github.com/Re4ch-Jay/Banking-System' />
+          <ProjectCard title="Spring Boot API" description="Build a Blog API with Spring Boot" technologies={['Spring Boot', 'Postgresql', "Java"]} link='https://github.com/Re4ch-Jay/Spring-Boot-API' />
         </div>
     </div>
   )
