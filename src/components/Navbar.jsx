@@ -12,6 +12,7 @@ export default function Navbar() {
                 <NavLink to='/' className="text-white text-xs md:text-base hover:underline cursor-pointer">Home</NavLink>
                 <NavLink to='blogs'  className="text-white text-xs md:text-base hover:underline cursor-pointer">Blog</NavLink>
                 <NavLink to='statistics'  className="text-white text-xs md:text-base hover:underline cursor-pointer">Statistics</NavLink>
+                <NavLink to='projects'  className="text-white text-xs md:text-base hover:underline cursor-pointer">Projects</NavLink>
             </div>
         </div>
     </div>

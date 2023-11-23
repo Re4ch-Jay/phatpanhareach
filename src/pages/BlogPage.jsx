@@ -1,34 +1,55 @@
-import {useState, useEffect} from 'react'
-import Card from '../components/Card'
-import { NavLink } from "react-router-dom"
-import db from "../firebase";
+import { useState, useEffect } from 'react';
+import Card from '../components/Card';
+import { NavLink } from 'react-router-dom';
+import db from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
+import Search from '../components/Search';
+import React from 'react';
 
 export default function BlogPage() {
-
+  const [searchText, setSearchText] = useState('');
   const [blogs, setBlogs] = useState([]);
-
+  const [filteredBlogs, setFilteredBlogs] = useState([]);
+  
   useEffect(() => {
-     const getBlogs = async () => {
+    const getBlogs = async () => {
       try {
-        const data = await getDocs(collection(db, "blogs"))
+        const data = await getDocs(collection(db, 'blogs'));
         setBlogs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
       } catch (error) {
-        console.log(error)
+        console.log(error);
       }
-     }
-     getBlogs();
-  },[]);
+    };
+    getBlogs();
+  }, []);
+
+  useEffect(() => {
+    const filtered = blogs.filter((blog) =>
+      blog.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+    setFilteredBlogs(filtered);
+  }, [searchText, blogs]);
+
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value);
+  };
 
   return (
     <div className='container mx-auto max-w-screen-lg px-4 py-5'>
+      <Search searchText={searchText} handleSearchChange={handleSearchChange} />
       <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5'>
-        {blogs.map(blog => (
-          <BlogCard title={blog.title} description={blog.description} technologies={blog.technologies} link={blog.id}/>
+        {filteredBlogs.map((blog) => (
+          <BlogCard
+            key={blog.id}
+            title={blog.title}
+            description={blog.description}
+            technologies={blog.technologies}
+            link={blog.id}
+          />
         ))}
       </div>
     </div>
-  )
+  );
 }
 
 function BlogCard({title, description, technologies, link, ...props}) {
