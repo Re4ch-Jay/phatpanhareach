@@ -1,4 +1,4 @@
-# About King-Typer
+## About King-Typer
 
 A website for typing tests based on accuracy, wpm, and challenges with others.
 
@@ -17,11 +17,11 @@ A website for typing tests based on accuracy, wpm, and challenges with others.
 - Account system.
 - Challenges and just-for-fun test modifiers.
 
-# Build with King-Typer
+## Build with King-Typer
 
 This website is built with [Laravel](https://laravel.com/), [React](https://react.dev/), JavaScript, PHP, [Tailwind](https://tailwindcss.com/), JSON.
 
-# How to run in a local development server
+## How to run in a local development server
 
 ```bash
 $ git clone https://github.com/Re4ch-Jay/King-Typer.git
