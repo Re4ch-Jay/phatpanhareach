@@ -3,4 +3,6 @@ export const blogs = [
     {id: "Why-I-Study-Computer-Science", title: "Why I Study Computer Science", description: "This field of study opens up a multitude of opportunities", technologies: ["Life"]},
     {id: "Why-I-Like-Football", title: "Why I Like Football?", description: "Football, to me, is more than just a sport; it's a captivating journey that blends athleticism", technologies: ["Life"]},
     {id: "Akiko", title: "Akiko", description: "Akiko a minimal JavaScript command-line toolkit.", technologies: ["JS", "Package"]},
+    {id: "OOP", title: "Object-Oriented Programming (OOP)", description: "OOP in Java: A Comprehensive Guide", technologies: ["Java"]},
+    {id: "Backend-Roadmap", title: "Backend Developer Roadmap", description: "A Comprehensive Guide to become a Backend Developer", technologies: ["Guide", "Roadmap"]},
 ]
