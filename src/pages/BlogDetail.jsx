@@ -1,32 +1,27 @@
 import { useEffect, useState, useMemo } from 'react';
-import Comments from '../components/Comments'; // Import the Comments component
+import Comments from '../components/Comments';
 import { useParams } from 'react-router-dom';
-import { doc, getDoc } from 'firebase/firestore';
-import db from "../firebase";
+import MarkdownRenderer from '../components/MarkdownRenderer';
 
 export default function BlogDetail() {
-  const [blog, setBlog] = useState({});
-  const { id } = useParams();
+  const { fileName } = useParams();
+  const markdownFilePath = `/markdown/${fileName}.md`;
+
+  const fetchMarkdownContent = async () => {
+    const response = await fetch(markdownFilePath);
+    return response.text();
+  };
+
+  const [markdownContent, setMarkdownContent] = useState('');
 
   useEffect(() => {
-    const getBlog = async () => {
-      try {
-        const data = await getDoc(doc(db, 'blogs', id));
-        setBlog(data.data());
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getBlog();
-  }, [id]);
+    fetchMarkdownContent().then(setMarkdownContent);
+  }, [markdownFilePath]);
 
   return (
     <div className="container mx-auto max-w-screen-lg px-4 py-5 bg-gray-900 rounded-lg shadow-lg mt-10">
       <div className='max-w-screen-lg text-white'>
-        <h1 className="text-white text-2xl font-bold">{blog.title}</h1>
-        <h4 className="text-lg text-white">{blog.description}</h4>
-        <br />
-        <p>{blog.content}</p>
+        <MarkdownRenderer content={markdownContent} />
       </div>
       {useMemo(() => <Comments />, [])} {/* Memoize the Comments component */}
     </div>

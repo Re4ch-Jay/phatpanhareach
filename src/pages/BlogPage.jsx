@@ -1,27 +1,14 @@
 import { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import { NavLink } from 'react-router-dom';
-import db from '../firebase';
-import { collection, getDocs } from 'firebase/firestore';
 import Search from '../components/Search';
 import React from 'react';
+import { blogs } from '../blog';
 
 export default function BlogPage() {
   const [searchText, setSearchText] = useState('');
-  const [blogs, setBlogs] = useState([]);
   const [filteredBlogs, setFilteredBlogs] = useState([]);
   
-  useEffect(() => {
-    const getBlogs = async () => {
-      try {
-        const data = await getDocs(collection(db, 'blogs'));
-        setBlogs(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getBlogs();
-  }, []);
 
   useEffect(() => {
     const filtered = blogs.filter((blog) =>
@@ -44,7 +31,7 @@ export default function BlogPage() {
             title={blog.title}
             description={blog.description}
             technologies={blog.technologies}
-            link={blog.id}
+            link={`${blog.id}`}
           />
         ))}
       </div>

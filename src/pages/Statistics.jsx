@@ -1,9 +1,7 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import { NavLink } from "react-router-dom"
 import Card from '../components/Card'
 import React from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import db from '../firebase';
 import useFetch from '../hooks/useFetch';
 
 export default function Statistics() {
@@ -14,19 +12,6 @@ export default function Statistics() {
   const { data: gitHubRepos } = useFetch(`https://api.github.com/users/${username}/repos?per_page=100&page=1`);
   const { data: gitHubStars } = useFetch(`https://api.github-star-counter.workers.dev/user/${username}`);
 
-  useEffect(() => {
-     const getBlogs = async () => {
-      try {
-        const data = await getDocs(collection(db, "blogs"))
-        setBlogCount(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })).length);
-
-      } catch (error) {
-        console.log(error)
-      }
-     }
-     getBlogs();
-  },[]);
-
   return (
     <div className='container mx-auto max-w-screen-lg px-4 py-5'>
       <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5'>
@@ -34,7 +19,6 @@ export default function Statistics() {
           <StatisticCard title='GitHub Project Repos' followersCount={gitHubRepos.length} link={'https://github.com/Re4ch-Jay'} target='_blank' />
           <StatisticCard title='GitHub Stars' followersCount={gitHubStars.stars} link={'https://github.com/Re4ch-Jay'} target='_blank' />
           <StatisticCard title='GitHub Forks' followersCount={gitHubStars.forks} link={'https://github.com/Re4ch-Jay'} target='_blank' />
-          <StatisticCard title='Blogs Count' followersCount={blogCount} link={'/blogs'} />
       </div>
     </div>
   )

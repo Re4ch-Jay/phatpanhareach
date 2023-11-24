@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route path="/" Component={HomePage}/> {/* 👈 Renders at /app/ */}
             <Route path="/blogs" Component={BlogPage}/> {/* 👈 Renders at /app/ */}
-            <Route path="/blogs/:id" Component={BlogDetail}/> {/* 👈 Renders at /app/ */}
+            <Route path="/blogs/:fileName" Component={BlogDetail}/> {/* 👈 Renders at /app/ */}
             <Route path="/statistics" Component={Statistics}/> {/* 👈 Renders at /app/ */}
             <Route path="/projects" Component={GitHubProjectPage}/> {/* 👈 Renders at /app/ */}
           </Routes>
