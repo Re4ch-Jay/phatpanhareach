@@ -3,7 +3,7 @@ import Comments from '../components/Comments';
 import { useParams } from 'react-router-dom';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import { blogs } from '../blog';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 
 export default function BlogDetail() {
   const { fileName } = useParams();
@@ -25,7 +25,7 @@ export default function BlogDetail() {
   return (
     <>
      {matchingBlog && (
-        <Helmet>
+        <Helmet prioritizeSeoTags>
           <title>{matchingBlog.title}</title>
           <meta property="og:description" content={matchingBlog.description} />
           <meta name='description' content={matchingBlog.description} />
