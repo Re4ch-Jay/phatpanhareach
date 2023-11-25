@@ -8,6 +8,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Helmet>
       <title>Phat Panhareach - Portfolio</title>
+      <meta property="og:title" content="Phat Panhareach - Portfolio" />
       <meta property="og:description" content="I'm an enthusiastic learner who thrives on exploring novel technologies. My journey has led me to captivating projects, and I'm an active creator and contributor to open-source initiatives."/>
       <meta property="og:image" content="/banner.png" />
     </Helmet>
