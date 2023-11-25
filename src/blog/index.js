@@ -6,4 +6,5 @@ export const blogs = [
     {id: "OOP", title: "Object-Oriented Programming (OOP)", description: "OOP in Java: A Comprehensive Guide", technologies: ["Java"], image: "https://miro.medium.com/v2/resize:fit:1200/1*KRa8SkP7T646zokicYSqyQ.png"},
     {id: "Backend-Roadmap", title: "Backend Developer Roadmap", description: "A Comprehensive Guide to become a Backend Developer", technologies: ["Guide", "Roadmap"], image: ""},
     {id: "Programming-and-Creativity", title: "Programming and Creativity", description: "Programming is not merely a logical exercise", technologies: ["Guide"], image: ""},
+    {id: "Coding-Club", title: "Life as Coding Club Leader", description: "As leaders of the Coding Club at CADT", technologies: ["Life"], image: ""},
 ]
