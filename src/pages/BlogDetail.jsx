@@ -27,7 +27,7 @@ export default function BlogDetail() {
      {matchingBlog && (
         <Helmet>
           <title>{matchingBlog.title}</title>
-          <meta name="og:description" content={matchingBlog.description} />
+          <meta property="og:description" content={matchingBlog.description} />
           <meta property="og:image" content={matchingBlog.image === "" ? "/banner.png" : matchingBlog.image} />
         </Helmet>
       )}
