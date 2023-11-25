@@ -2,7 +2,7 @@
 ## Navigating the Code: A Glimpse into Life as CADT Coding Club Leaders
 
 ### Introduction:
-Welcome to our coding journey! As leaders of the Coding Club at the Center for Advanced Digital Technologies (CADT), we're thrilled to share our experiences, challenges, and triumphs in this dynamic world of programming. Join us as we navigate through lines of code, debug challenges, and foster a community of passionate coders.
+Welcome to our coding journey! As leaders of the Coding Club at the Cambodia Academy Of Digital Technology (CADT), we're thrilled to share our experiences, challenges, and triumphs in this dynamic world of programming. Join us as we navigate through lines of code, debug challenges, and foster a community of passionate coders.
 
 ### Inception and Inspiration:
 Every journey has a starting point, and ours began with a shared passion for coding. As leaders, we were inspired to create a space where like-minded individuals could come together, learn, and collaborate. Discover the story behind the inception of our Coding Club and the driving force that led us to take the helm.
