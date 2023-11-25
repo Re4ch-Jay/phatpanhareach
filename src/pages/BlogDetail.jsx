@@ -24,13 +24,20 @@ export default function BlogDetail() {
 
   return (
     <>
+      <Helmet prioritizeSeoTags>
+        <title>{matchingBlog.title}</title>
+        <meta property="og:title" content={matchingBlog.title} />
+        <meta property="og:description" content={matchingBlog.description} />
+        <meta name='description' content={matchingBlog.description} />
+        <meta property="og:image" content={matchingBlog.image === "" ? "/banner.png" : matchingBlog.image} />
+      </Helmet>
      {matchingBlog && (
         <Helmet prioritizeSeoTags>
           <title>{matchingBlog.title}</title>
+          <meta property="og:title" content={matchingBlog.title} />
           <meta property="og:description" content={matchingBlog.description} />
           <meta name='description' content={matchingBlog.description} />
           <meta property="og:image" content={matchingBlog.image === "" ? "/banner.png" : matchingBlog.image} />
-          <meta property="og:title" content={matchingBlog.title} />
         </Helmet>
       )}
      
