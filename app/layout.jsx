@@ -17,7 +17,6 @@ export const metadata  = {
     },
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     images: '/banner.png',
-    url: "https://phatpanhareach.vercel.app/",
     type: "website"
   }
 }
