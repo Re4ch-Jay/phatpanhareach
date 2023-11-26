@@ -12,7 +12,7 @@ export const metadata  = {
   icons: "/phatpanhareach.png",
   openGraph: {
     title: {
-      default: "Phat Panhareach",
+      default: "Portfolio | Phat Panhareach",
       template: "%s | Phat Panhareach",
     },
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
