@@ -1,7 +1,6 @@
 import React from 'react'
-import Card from './Card'
-
-export default function ProjectList() {
+import Card from "./Card"
+export default function ProjectFeatures() {
   return (
     <div className="container mx-auto max-w-screen-lg px-4 py-5">
         <p className="text-white text-center text-lg">I actively contribute to a range of open-source projects. While success may be elusive for now, I'm committed to continuous efforts and growth.</p>
