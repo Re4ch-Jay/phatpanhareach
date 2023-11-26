@@ -1,15 +1,11 @@
+import { PageNotFoundError } from "next/dist/shared/lib/utils";
 import BlogDetail from "./BlogDetail";
 import { blogs } from "@/app/util/blog";
 
 export async function generateMetadata({ params }, parent) {
   const matchingBlog = blogs.find(blog => blog.id === params.id);
 
-  if (!matchingBlog) {
-    // Handle the case where the blog is not found
-    return {};
-  }
-
-  const image = matchingBlog.image || './banner.png';
+  const image = matchingBlog.image || '/banner.png';
 
   return {
     title: matchingBlog.title,

@@ -2,21 +2,22 @@ import './globals.css'
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-
 export const metadata  = {
   title: {
     default: "Portfolio | Phat Panhareach",
     template: "%s | Phat Panhareach",
   },
   description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
-  icons: "/phatpanhareach.png",
+  icons: {
+    icon: "/phatpanhareach.png"
+  },
   openGraph: {
     title: {
       default: "Portfolio | Phat Panhareach",
       template: "%s | Phat Panhareach",
     },
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
-    images: '/banner.png',
+    images: "/banner.png",
     type: "website"
   }
 }
