@@ -1,6 +1,5 @@
-import { PageNotFoundError } from "next/dist/shared/lib/utils";
 import BlogDetail from "./BlogDetail";
-import { blogs } from "@/app/util/blog";
+import { blogs } from '@/data/blog';
 
 export async function generateMetadata({ params }, parent) {
   const matchingBlog = blogs.find(blog => blog.id === params.id);

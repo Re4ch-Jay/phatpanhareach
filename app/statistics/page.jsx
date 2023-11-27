@@ -1,7 +1,7 @@
 import Card from '../components/Card'
 import React from 'react';
 import Link from 'next/link';
-import { blogs } from '../util/blog';
+import { blogs } from '@/data/blog';
 
 async function getData(url) {
   const res = await fetch(url)

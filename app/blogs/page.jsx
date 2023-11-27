@@ -1,5 +1,5 @@
 import React from 'react';
-import { blogs } from '../util/blog';
+import { blogs } from '@/data/blog';
 import BlogList from './BlogList';
 
 export const metadata  = {
