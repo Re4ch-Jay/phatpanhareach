@@ -7,9 +7,23 @@ export const metadata  = {
   openGraph: {
     title: "Projects",
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
-  }
+    images: {
+      url: '/banner.png',
+      alt: 'Phat Panhareach',
+    }
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@panhareach_phat',
+    title: "Projects",
+    description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
+    creator: '@panhareach_phat',
+    images: {
+      url: '/banner.png',
+      alt: 'Phat Panhareach',
+    }
+  },
 }
-
 async function getData(url) {
   const res = await fetch(url);
   return res.json();
