@@ -52,8 +52,6 @@ export default function BlogDetailPage({ params }) {
     )
   );
 
-  console.log(similarBlogs)
-  
   return (
     <>
       <div className="container mx-auto max-w-screen-lg px-4 py-5 bg-gray-900 rounded-lg shadow-lg mt-10">
@@ -62,7 +60,7 @@ export default function BlogDetailPage({ params }) {
         </div>
         <BlogDetail fileName={params.id} />
       </div>
-      <div className="container mx-auto max-w-screen-lg mt-10">
+      <div className="container mx-auto max-w-screen-lg mt-10 px-4 md:px-0">
         {similarBlogs.length !== 0 && <p className="text-white text-2xl font-bold">Similar Blog</p>}
           <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5 mt-5'>
           {similarBlogs.map(blog => (
