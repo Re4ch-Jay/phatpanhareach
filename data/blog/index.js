@@ -7,4 +7,5 @@ export const blogs = [
     {id: "Backend-Roadmap", title: "Backend Developer Roadmap", description: "A Comprehensive Guide to become a Backend Developer", technologies: ["Guide", "Roadmap"], image: "https://raw.githubusercontent.com/Re4ch-Jay/phatpanhareach/main/public/assets/backend.png"},
     {id: "Programming-and-Creativity", title: "Programming and Creativity", description: "Programming is not merely a logical exercise", technologies: ["Guide"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/programming.png?raw=true"},
     {id: "Coding-Club", title: "Life as Coding Club Leader", description: "As leaders of the Coding Club at CADT", technologies: ["Life"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/codingclub.png?raw=true"},
+    {id: "Javascript-Sorting", title: "Data Sorting in JavaScript", description: "Sorting data is a fundamental operation in programming", technologies: ["JavaScript"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/javascript.png?raw=true"},
 ]
