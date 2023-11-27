@@ -7,12 +7,16 @@ export const metadata  = {
   title: "Blogs",
   description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
   url: `${homeUrl}/blogs`,
-  canonical: `${homeUrl}/blogs`,
+  alternates: {
+    canonical: `${homeUrl}/blogs`,
+  },
   openGraph: {
     title: "Blogs",
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     url: `${homeUrl}/blogs`,
-    canonical: `${homeUrl}/blogs`,
+    alternates: {
+      canonical: `${homeUrl}/blogs`,
+    },
     images: {
       url: defaultImage,
       alt: 'Phat Panhareach',

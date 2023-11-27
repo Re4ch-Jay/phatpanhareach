@@ -13,12 +13,16 @@ export async function generateMetadata({ params }, parent) {
     description: matchingBlog.description,
     images: image,
     url: `${homeUrl}/blogs/${matchingBlog.id}`,
-    canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
+    alternates: {
+      canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
+    },
     openGraph: {
       title: matchingBlog.title,
       description: matchingBlog.description,
       url: `${homeUrl}/blogs/${matchingBlog.id}`,
-      canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
+      alternates: {
+        canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
+      },
       images: [
         {
           url: image,

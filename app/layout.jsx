@@ -14,7 +14,9 @@ export const metadata  = {
     icon: "/phatpanhareach.png"
   },
   url: homeUrl,
-  canonical: homeUrl,
+  alternates: {
+    canonical: homeUrl,
+  },
   openGraph: {
     title: {
       default: "Portfolio | Phat Panhareach",
@@ -23,7 +25,9 @@ export const metadata  = {
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     type: "website",
     url: homeUrl,
-    canonical: homeUrl,
+    alternates: {
+      canonical: homeUrl,
+    },
     images: [
       {
         url: defaultImage,
