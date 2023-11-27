@@ -1,4 +1,4 @@
-import Image from "next/image";
+import BlogCard from "../BlogCard";
 import BlogDetail from "./BlogDetail";
 import { blogs } from '@/data/blog';
 
@@ -41,6 +41,19 @@ export async function generateMetadata({ params }, parent) {
 export default function BlogDetailPage({ params }) {
   const matchingBlog = blogs.find(blog => blog.id === params.id);
   const image = matchingBlog.image || '/banner.png';
+  
+  const similarBlogs = blogs.filter((blog) =>
+    blog.id !== matchingBlog.id && // Exclude the blog with the matching ID
+    blog.technologies.some(
+      (tech) =>
+        matchingBlog.technologies
+          .map((matchTech) => matchTech.toLowerCase())
+          .includes(tech.toLowerCase())
+    )
+  );
+
+  console.log(similarBlogs)
+  
   return (
     <>
       <div className="container mx-auto max-w-screen-lg px-4 py-5 bg-gray-900 rounded-lg shadow-lg mt-10">
@@ -48,6 +61,22 @@ export default function BlogDetailPage({ params }) {
           <img alt={params.id} src={image} className="w-80 md:w-auto md:h-96"  />
         </div>
         <BlogDetail fileName={params.id} />
+      </div>
+      <div className="container mx-auto max-w-screen-lg mt-10">
+        {similarBlogs.length !== 0 && <p className="text-white text-2xl font-bold">Similar Blog</p>}
+          <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5 mt-5'>
+          {similarBlogs.map(blog => (
+            
+                <BlogCard
+                  key={blog.id}
+                  title={blog.title}
+                  description={blog.description}
+                  technologies={blog.technologies}
+                  link={`${blog.id}`}
+                />
+            
+            ))}
+          </div>
       </div>
     </>
   );

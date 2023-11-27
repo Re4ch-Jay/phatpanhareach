@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Hero() {
-  
+  const age = Math.floor((new Date() - new Date("2003-10-18")) / (365.25 * 24 * 60 * 60 * 1000));
   return (
     <div className="p-8 rounded-lg shadow-lg mx-auto max-w-screen-lg mt-20">
       <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-5">
@@ -12,7 +12,7 @@ export default function Hero() {
           <br />
           <br />
           <p className="text-lg">
-          I'm an enthusiastic learner who thrives on exploring novel technologies. My journey has led me to captivating projects, and I'm an active creator and contributor to open-source initiatives.
+          I'm a {age} years old, enthusiastic learner who thrives on exploring novel technologies. My journey has led me to captivating projects, and I'm an active creator and contributor to open-source initiatives.
           </p>
         </div>
         <div className="w-52 h-52 md:w-96 md:h-96 lg:w-128 lg:h-128 relative flex items-center justify-center">
