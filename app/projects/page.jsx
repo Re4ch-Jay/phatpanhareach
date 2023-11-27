@@ -1,5 +1,5 @@
 
-import { homeUrl } from "../util";
+import { defaultImage, homeUrl } from "../util";
 import ProjectList from "./ProjectList";
 
 export const metadata  = {
@@ -12,12 +12,16 @@ export const metadata  = {
   openGraph: {
     title: "Projects",
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
+    type: "website",
     url: `${homeUrl}/projects`,
     alternates: {
       canonical: `${homeUrl}/projects`,
     },
     images: {
-      url: '/banner.png',
+      url: defaultImage,
+      secureUrl: defaultImage,
+      width: 1200,
+      height: 630,
       alt: 'Phat Panhareach',
     }
   },
@@ -28,7 +32,7 @@ export const metadata  = {
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     creator: '@panhareach_phat',
     images: {
-      url: '/banner.png',
+      url: defaultImage,
       alt: 'Phat Panhareach',
     }
   },

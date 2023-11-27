@@ -13,12 +13,16 @@ export const metadata  = {
   openGraph: {
     title: "Blogs",
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
+    type: "website",
     url: `${homeUrl}/blogs`,
     alternates: {
       canonical: `${homeUrl}/blogs`,
     },
     images: {
       url: defaultImage,
+      secureUrl: defaultImage,
+      width: 1200,
+      height: 630,
       alt: 'Phat Panhareach',
     }
   },

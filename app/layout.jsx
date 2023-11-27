@@ -13,6 +13,7 @@ export const metadata  = {
   icons: {
     icon: "/phatpanhareach.png"
   },
+  type: "website",
   url: homeUrl,
   alternates: {
     canonical: homeUrl,

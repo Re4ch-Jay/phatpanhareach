@@ -20,6 +20,7 @@ export async function generateMetadata({ params }, parent) {
       title: matchingBlog.title,
       description: matchingBlog.description,
       url: `${homeUrl}/blogs/${matchingBlog.id}`,
+      type: "website",
       alternates: {
         canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
       },
