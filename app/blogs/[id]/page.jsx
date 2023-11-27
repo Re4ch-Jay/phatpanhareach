@@ -1,3 +1,4 @@
+import { defaultImage, homeUrl } from "@/app/util";
 import BlogCard from "../BlogCard";
 import BlogDetail from "./BlogDetail";
 import { blogs } from '@/data/blog';
@@ -5,15 +6,19 @@ import { blogs } from '@/data/blog';
 export async function generateMetadata({ params }, parent) {
   const matchingBlog = blogs.find(blog => blog.id === params.id);
 
-  const image = matchingBlog.image || '/banner.png';
+  const image = matchingBlog.image || defaultImage;
 
   return {
     title: matchingBlog.title,
     description: matchingBlog.description,
     images: image,
+    url: `${homeUrl}/blogs/${matchingBlog.id}`,
+    canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
     openGraph: {
       title: matchingBlog.title,
       description: matchingBlog.description,
+      url: `${homeUrl}/blogs/${matchingBlog.id}`,
+      canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
       images: [
         {
           url: image,

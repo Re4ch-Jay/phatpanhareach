@@ -2,6 +2,7 @@ import './globals.css'
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { defaultImage, homeUrl } from './util'
 
 export const metadata  = {
   title: {
@@ -12,6 +13,8 @@ export const metadata  = {
   icons: {
     icon: "/phatpanhareach.png"
   },
+  url: homeUrl,
+  canonical: homeUrl,
   openGraph: {
     title: {
       default: "Portfolio | Phat Panhareach",
@@ -19,11 +22,12 @@ export const metadata  = {
     },
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     type: "website",
-    url: 'https://phatpanhareach.vercel.app/',
+    url: homeUrl,
+    canonical: homeUrl,
     images: [
       {
-        url: '/banner.png',
-        secureUrl: '/banner.png',
+        url: defaultImage,
+        secureUrl: defaultImage,
         width: 1200,
         height: 630,
         alt: 'Phat Panhareach',
@@ -40,7 +44,7 @@ export const metadata  = {
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     creator: '@panhareach_phat',
     images: {
-      url: '/banner.png',
+      url: defaultImage,
       alt: 'Phat Panhareach',
     }
   },

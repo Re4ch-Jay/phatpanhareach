@@ -1,12 +1,17 @@
 
+import { homeUrl } from "../util";
 import ProjectList from "./ProjectList";
 
 export const metadata  = {
   title: "Projects",
   description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
+  url: `${homeUrl}/projects`,
+  canonical: `${homeUrl}/projects`,
   openGraph: {
     title: "Projects",
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
+    url: `${homeUrl}/projects`,
+    canonical: `${homeUrl}/projects`,
     images: {
       url: '/banner.png',
       alt: 'Phat Panhareach',
