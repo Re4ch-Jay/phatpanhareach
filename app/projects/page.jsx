@@ -44,7 +44,7 @@ async function getData(url) {
 
 export default async function Projects() {
   
-  const projects = await getData('https://api.github.com/users/Re4ch-Jay/repos?per_page=100&page=1');
+  const projects = await getData('https://api.github.com/users/Re4ch-Jay/repos?per_page=500&page=1');
 
   return (
     <div className='container mx-auto max-w-screen-lg px-4 py-5'>
