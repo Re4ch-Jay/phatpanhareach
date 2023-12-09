@@ -28,7 +28,7 @@ export default function Audio() {
             onClick={handleStop}
             title="Stop Music"
           >
-            🔇
+            🔊
           </button>
         )}
         {!isMusicOn && (
@@ -36,8 +36,8 @@ export default function Audio() {
             className="text-4xl"
             onClick={handlePlay}
             title="Play Music"
-          >
-            🔊
+          >  
+            🔇
           </button>
         )}
       </div>

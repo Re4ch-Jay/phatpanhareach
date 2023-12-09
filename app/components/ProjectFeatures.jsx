@@ -6,6 +6,7 @@ export default function ProjectFeatures() {
         <p className="text-white text-center text-lg">I actively contribute to a range of open-source projects. While success may be elusive for now, I'm committed to continuous efforts and growth.</p>
         <div className="grid grid-cols-2 justify-center items-center gap-5 mt-10 cursor-pointer">
           <ProjectCard title="Akiko" description="A minimal JavaScript CLI Package" technologies={['JS', 'Node', 'CLI']} link='https://www.npmjs.com/package/akiko' />
+          <ProjectCard title="Hashiru" description="A CLI Starter Kit For Express.js" technologies={['JS', 'Node', 'CLI']}link='https://github.com/Re4ch-Jay/hashiru' />
           <ProjectCard title="King-Typer" description="A website for typing test based, accuracy, wpm and challenge with others" technologies={['Laravel', 'React', 'MySQL']} link='https://github.com/Re4ch-Jay/King-Typer' />
           <ProjectCard title="Sandbox-APIs" description="A collection of APIs endpoint similar to any social media" technologies={['Laravel', 'RestAPI']} link='https://github.com/Re4ch-Jay/Sandbox-APIs' />
           <ProjectCard title="Meditation Mobile App" description="An app that make you calm, relief, relax, and focus 🧘" technologies={['Flutter', 'Mobile App']} link='https://github.com/Re4ch-Jay/Meditation_App' />
@@ -14,7 +15,6 @@ export default function ProjectFeatures() {
           <ProjectCard title="Ecommerce Mobile App" description="Shopping at home is better!" technologies={['Flutter']} link='https://github.com/Re4ch-Jay/Ecommerce-Flutter' />
           <ProjectCard title="Student Management System" description="Minimal Student Management System with Authentication & Authorization" technologies={['Laravel', 'MySQL']} link='https://github.com/Re4ch-Jay/Simple-Student-Management' />
           <ProjectCard title="Banking System" description="Simple Banking System" technologies={['Spring Boot']} link='https://github.com/Re4ch-Jay/Banking-System' />
-          <ProjectCard title="Spring Boot API" description="Build a Blog API with Spring Boot" technologies={['Spring Boot']} link='https://github.com/Re4ch-Jay/Spring-Boot-API' />
         </div>
     </div>
   )
