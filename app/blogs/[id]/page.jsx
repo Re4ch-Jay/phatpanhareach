@@ -29,7 +29,7 @@ export async function generateMetadata({ params }, parent) {
           url: image,
           secureUrl: image,
           width: 1200,
-          height: 630,
+          height: 627,
           alt: matchingBlog.title,
         }
       ],
