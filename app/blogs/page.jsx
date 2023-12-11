@@ -22,7 +22,7 @@ export const metadata  = {
       url: defaultImage,
       secureUrl: defaultImage,
       width: 1200,
-      height: 630,
+      height: 627,
       alt: 'Phat Panhareach',
     }
   },

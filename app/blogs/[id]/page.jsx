@@ -4,48 +4,69 @@ import BlogDetail from "./BlogDetail";
 import { blogs } from '@/data/blog';
 
 export async function generateMetadata({ params }, parent) {
-  const matchingBlog = blogs.find(blog => blog.id === params.id);
+  try {
+    const matchingBlog = blogs.find(blog => blog.id === params.id);
 
-  const image = matchingBlog.image || defaultImage;
-
-  return {
-    title: matchingBlog.title,
-    description: matchingBlog.description,
-    images: image,
-    url: `${homeUrl}/blogs/${matchingBlog.id}`,
-    alternates: {
-      canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
-    },
-    openGraph: {
+    const image = matchingBlog.image || defaultImage;
+  
+    return {
       title: matchingBlog.title,
       description: matchingBlog.description,
-      url: `${homeUrl}/blogs/${matchingBlog.id}`,
-      type: "website",
-      alternates: {
-        canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
-      },
       images: [
         {
           url: image,
           secureUrl: image,
           width: 1200,
-          height: 630,
+          height: 627,
           alt: matchingBlog.title,
         }
       ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      site: '@panhareach_phat',
-      title: matchingBlog.title,
-      description: matchingBlog.description ,
-      creator: '@panhareach_phat',
-      images: {
-        url: image,
-        alt: matchingBlog.title,
-      }
-    },
-  };
+      url: `${homeUrl}/blogs/${matchingBlog.id}`,
+      alternates: {
+        canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
+      },
+      openGraph: {
+        title: matchingBlog.title,
+        description: matchingBlog.description,
+        url: `${homeUrl}/blogs/${matchingBlog.id}`,
+        type: "website",
+        alternates: {
+          canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
+        },
+        images: [
+          {
+            url: image,
+            secureUrl: image,
+            width: 1200,
+            height: 627,
+            alt: matchingBlog.title,
+          }
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        site: '@panhareach_phat',
+        title: matchingBlog.title,
+        description: matchingBlog.description ,
+        creator: '@panhareach_phat',
+        images: [
+          {
+            url: image,
+            secureUrl: image,
+            width: 1200,
+            height: 627,
+            alt: matchingBlog.title,
+          }
+        ],
+      },
+    };
+  } catch (e) {
+    return {
+      title: "Not Found",
+      description: "The page you are looking for does not exist",
+    };
+  }
+  
 }
 
 export default function BlogDetailPage({ params }) {
