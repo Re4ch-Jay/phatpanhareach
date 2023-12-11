@@ -6,9 +6,9 @@ export default function ProjectFeatures() {
         <p className="text-white text-center text-lg">I actively contribute to a range of open-source projects. While success may be elusive for now, I'm committed to continuous efforts and growth.</p>
         <div className="grid grid-cols-2 justify-center items-center gap-5 mt-10 cursor-pointer">
           <ProjectCard title="Akiko" description="A minimal JavaScript CLI Package" technologies={['JS', 'Node', 'CLI']} link='https://www.npmjs.com/package/akiko' />
-          <ProjectCard title="Hashiru" description="A CLI Starter Kit For Express.js" technologies={['JS', 'Node', 'CLI']}link='https://github.com/Re4ch-Jay/hashiru' />
+          <ProjectCard title="Hashiru" description="A CLI Starter Kit For Express.js" technologies={['JS', 'Node', 'CLI']} link='https://github.com/Re4ch-Jay/hashiru' />
+          <ProjectCard title="FakerKH" description="JavaScript library for Khmer Random Word" technologies={['JS', 'Node', 'Lib']} link='https://github.com/Re4ch-Jay/FakerKH' />
           <ProjectCard title="King-Typer" description="A website for typing test based, accuracy, wpm and challenge with others" technologies={['Laravel', 'React', 'MySQL']} link='https://github.com/Re4ch-Jay/King-Typer' />
-          <ProjectCard title="Sandbox-APIs" description="A collection of APIs endpoint similar to any social media" technologies={['Laravel', 'RestAPI']} link='https://github.com/Re4ch-Jay/Sandbox-APIs' />
           <ProjectCard title="Meditation Mobile App" description="An app that make you calm, relief, relax, and focus 🧘" technologies={['Flutter', 'Mobile App']} link='https://github.com/Re4ch-Jay/Meditation_App' />
           <ProjectCard title="Get Me QR" description="Software tool to generate your QR Code" technologies={['React']} link='https://getmeqr.vercel.app/' />
           <ProjectCard title="Book Store Mobile App" description="Buy book from home is better!" technologies={['Flutter']} link='https://github.com/Re4ch-Jay/Book-Store' />
