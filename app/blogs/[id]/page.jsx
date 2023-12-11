@@ -12,7 +12,15 @@ export async function generateMetadata({ params }, parent) {
     return {
       title: matchingBlog.title,
       description: matchingBlog.description,
-      images: image,
+      images: [
+        {
+          url: image,
+          secureUrl: image,
+          width: 1200,
+          height: 627,
+          alt: matchingBlog.title,
+        }
+      ],
       url: `${homeUrl}/blogs/${matchingBlog.id}`,
       alternates: {
         canonical: `${homeUrl}/blogs/${matchingBlog.id}`,
@@ -41,10 +49,15 @@ export async function generateMetadata({ params }, parent) {
         title: matchingBlog.title,
         description: matchingBlog.description ,
         creator: '@panhareach_phat',
-        images: {
-          url: image,
-          alt: matchingBlog.title,
-        }
+        images: [
+          {
+            url: image,
+            secureUrl: image,
+            width: 1200,
+            height: 627,
+            alt: matchingBlog.title,
+          }
+        ],
       },
     };
   } catch (e) {
