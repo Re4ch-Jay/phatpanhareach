@@ -14,6 +14,7 @@ export default function Technologies() {
             <Technology name='Dart' img="https://upload.wikimedia.org/wikipedia/commons/c/c6/Dart_logo.png"/>
             <Technology name='Laravel' img="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1969px-Laravel.svg.png"/>
             <Technology name='React' img="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png"/>
+            <Technology name='NextJs' img="https://logowik.com/content/uploads/images/nextjs7685.logowik.com.webp"/>
             <Technology name='ASP.Net' img="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png"/>
             <Technology name='Spring Boot' img="https://dz2cdn1.dzone.com/storage/temp/12434118-spring-boot-logo.png"/>
             <Technology name='Node' img="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png"/>
