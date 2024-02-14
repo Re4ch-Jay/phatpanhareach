@@ -15,7 +15,7 @@ export default function Experiences() {
 function Experience({title, year, company, description}) {
   return (
     <div className="my-5">
-        <h1 className="text-lg text-white">{title} {company}</h1>
+        <h1 className="text-lg text-white">{title} {company && <span>-</span>} {company}</h1>
         <h4 className="text-yellow-500">{year}</h4>
         <p className="text-white">{description}</p>
     </div>
