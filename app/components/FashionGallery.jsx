@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
 export default function FashionGallery() {
   const galleryItems = [
@@ -62,7 +62,7 @@ export default function FashionGallery() {
               <img
                 src={galleryItems[selected].src}
                 alt={galleryItems[selected].fit}
-                className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl max-h-60 sm:max-h-80 md:max-h-[70vh] lg:max-h-[80vh] rounded-lg"
+                className="max-w-full max-h-[80vh] rounded-lg"
               />
               <button
                 className="bg-white text-black px-3 py-2 rounded-full font-bold mx-2 disabled:opacity-50"
