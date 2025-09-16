@@ -7,13 +7,20 @@ export default function Hero() {
       <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-5">
         <div className="text-white text-2xl max-w-md text-center">
           <h1 className="text-4xl font-extrabold">Phat Panhareach</h1>
-          <h4 className="text-2xl font-semibold">Software Engineer</h4>
+          <h4 className="text-2xl font-semibold">Experienced & Versatile Software Developer</h4>
           <a href="mailto:panhareach.phat.2050@gmail.com" className="text-base hover:underline">panhareach.phat.2050@gmail.com</a>
           <br />
           <br />
           <p className="text-lg">
-          I'm a {age} years old, enthusiastic learner who thrives on exploring novel technologies. My journey has led me to captivating projects, and I'm an active creator and contributor to open-source initiatives.
+            {`I'm a ${age}-year-old software developer specializing in scalable backend solutions. Experienced in team leadership, code reviews, and delivering secure, high-performance systems.`}
           </p>
+          <a
+            href="/pdf/Panhareach-Phat-Resume.pdf"
+            download
+            className="inline-block mt-4 px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-bold rounded-full transition"
+          >
+            Download Resume
+          </a>
         </div>
         <div className="w-52 h-52 md:w-96 md:h-96 lg:w-128 lg:h-128 relative flex items-center justify-center">
           <img className="w-full h-full rounded-full" src="https://avatars.githubusercontent.com/u/111555521?v=4" alt="Phat Panhareach Profile" />
