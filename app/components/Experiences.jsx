@@ -105,8 +105,8 @@ export default function Experiences() {
   ]
 
   return (
-    <div className="container mx-auto max-w-screen-lg px-4 py-8">
-      <p className="text-white text-4xl font-extrabold mb-8">Experiences</p>
+    <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 py-6 sm:py-12">
+      <p className="text-white text-3xl sm:text-4xl font-extrabold mb-6 sm:mb-8 text-center sm:text-left">Experiences</p>
       {experiences.map((exp, idx) => (
         <Experience
           key={idx}
@@ -125,26 +125,32 @@ export default function Experiences() {
 function Experience({title, year, company, short, full, technologies}) {
   const [shortRead, setShortRead] = React.useState(true)
   return (
-    <div className="bg-gray-800 rounded-2xl shadow-lg p-8 mb-8">
-      <h1 className="text-2xl text-white font-bold mb-2">{title} {company &&
-        <span className="text-gray-400">- {company}</span>}</h1>
-      <h4 className="text-yellow-400 text-xl font-semibold mb-4">{year}</h4>
+    <div className="bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8 mb-6 sm:mb-8">
+      <h1 className="text-xl sm:text-2xl text-white font-bold mb-1 sm:mb-2">
+        {title} {company && <span className="text-gray-400">- {company}</span>}
+      </h1>
+      <h4 className="text-yellow-400 text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{year}</h4>
+
       {shortRead ? (
-        <p className="text-white text-lg mb-4">{short}</p>
+        <p className="text-white text-base sm:text-lg mb-4">{short}</p>
       ) : (
-        <ul className="list-disc pl-6 text-white text-lg mb-4">
+        <ul className="list-disc pl-4 sm:pl-6 text-white text-base sm:text-lg mb-4 space-y-1 sm:space-y-2">
           {full.map((point, i) => (
-            <li key={i} className="mb-2">{point}</li>
+            <li key={i}>{point}</li>
           ))}
         </ul>
       )}
+
       <div className="flex flex-wrap gap-2 mb-4">
         {technologies.map((tech, i) => (
-          <span key={i} className="bg-gray-700 text-yellow-300 px-3 py-1 rounded-full text-sm font-medium">{tech}</span>
+          <span key={i} className="bg-gray-700 text-yellow-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
+            {tech}
+          </span>
         ))}
       </div>
+
       <button
-        className="px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-lg font-bold rounded-full transition"
+        className="px-4 sm:px-6 py-2 sm:py-3 bg-yellow-500 hover:bg-yellow-600 text-white text-sm sm:text-lg font-bold rounded-full transition w-full sm:w-auto"
         onClick={() => setShortRead(!shortRead)}
       >
         {shortRead ? 'See More' : 'See Less'}
