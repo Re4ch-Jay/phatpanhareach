@@ -2,11 +2,11 @@ import React from 'react'
 
 const LINKS = [
   { platform: 'GitHub', url: 'https://github.com/Re4ch-Jay' },
+  { platform: 'GitLab', url: 'https://gitlab.com/panhareachphat' },
   { platform: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100054954846588' },
   { platform: 'Twitter', url: 'https://twitter.com/panhareach_phat' },
-  { platform: 'Instagram', url: 'https://www.instagram.com/re4ch_/' },
-  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/panhareach-phat-0a5897249/' },
-  { platform: 'Reddit', url: 'https://www.reddit.com/user/phatpanhareach/' },
+  { platform: 'Instagram', url: 'https://www.instagram.com/p.p.reach/' },
+  { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/panhareach-phat-a243452a5' },
 ]
 
 export default function SocialLinks() {
