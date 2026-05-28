@@ -1,23 +1,27 @@
 import Link from "next/link";
-import Card from "../components/Card";
 import React from "react";
 
-export default function BlogCard({title, description, technologies, link, ...props}) {
-    return (
-      <Link href={link} {...props}>
-      <Card className="sm:h-28 md:h-36">
-        <>
-          <p className="text-xl font-bold">{title}</p>
-          <p className="text-base">{description}</p>
-          <div className="flex flex-row flex-wrap mt-3 gap-1">
-            {technologies.map((technology, index) => (
-              <p key={index} className="px-8 text-center bg-gray-800 text-white text-sm rounded">
-                {technology}
-              </p>
-            ))}
-          </div>
-        </>
-      </Card>
-      </Link>
-    )
-  }
+export default function BlogCard({ title, description, technologies, link, ...props }) {
+  return (
+    <Link
+      href={link}
+      {...props}
+      className="group rounded-2xl border border-border bg-surface p-5 shadow-card hover:shadow-card-hover hover:bg-surface-hover transition-all"
+    >
+      <h3 className="text-base sm:text-lg font-semibold text-primary group-hover:text-accent transition-colors">
+        {title}
+      </h3>
+      <p className="mt-1.5 text-sm text-muted leading-relaxed">{description}</p>
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {technologies.map((technology, index) => (
+          <span
+            key={index}
+            className="rounded-full border border-border bg-bg-soft px-2.5 py-0.5 text-xs font-medium text-muted"
+          >
+            {technology}
+          </span>
+        ))}
+      </div>
+    </Link>
+  )
+}

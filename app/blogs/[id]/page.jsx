@@ -8,7 +8,7 @@ export async function generateMetadata({ params }, parent) {
     const matchingBlog = blogs.find(blog => blog.id === params.id);
 
     const image = matchingBlog.image || defaultImage;
-  
+
     return {
       title: matchingBlog.title,
       description: matchingBlog.description,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }, parent) {
         card: 'summary_large_image',
         site: '@panhareach_phat',
         title: matchingBlog.title,
-        description: matchingBlog.description ,
+        description: matchingBlog.description,
         creator: '@panhareach_phat',
         images: [
           {
@@ -66,36 +66,43 @@ export async function generateMetadata({ params }, parent) {
       description: "The page you are looking for does not exist",
     };
   }
-  
 }
 
 export default function BlogDetailPage({ params }) {
   const matchingBlog = blogs.find(blog => blog.id === params.id);
-  const image = matchingBlog.image || '/banner.png';
-  
-  const similarBlogs = blogs.filter((blog) =>
-    blog.id !== matchingBlog.id && // Exclude the blog with the matching ID
-    blog.technologies.some(
-      (tech) =>
-        matchingBlog.technologies
-          .map((matchTech) => matchTech.toLowerCase())
-          .includes(tech.toLowerCase())
-    )
-  );
+  const image = matchingBlog?.image || '/banner.png';
+
+  const similarBlogs = matchingBlog
+    ? blogs.filter((blog) =>
+        blog.id !== matchingBlog.id &&
+        blog.technologies.some(
+          (tech) =>
+            matchingBlog.technologies
+              .map((matchTech) => matchTech.toLowerCase())
+              .includes(tech.toLowerCase())
+        )
+      )
+    : [];
 
   return (
     <>
-      <div className="container mx-auto max-w-screen-lg px-4 py-5 bg-gray-900 rounded-lg shadow-lg mt-10">
+      <article className="container mx-auto max-w-screen-lg px-4 sm:px-6 py-8 sm:py-10 mt-10 bg-surface border border-border rounded-2xl shadow-card">
         <div className="flex justify-center items-center">
-          <img alt={params.id} src={image} className="w-80 md:w-auto md:h-96"  />
+          <img
+            alt={params.id}
+            src={image}
+            className="w-72 md:w-auto md:h-96 object-contain rounded-xl"
+          />
         </div>
         <BlogDetail fileName={params.id} />
-      </div>
-      <div className="container mx-auto max-w-screen-lg mt-10 px-4 md:px-0">
-        {similarBlogs.length !== 0 && <p className="text-white text-2xl font-bold">Similar Blog</p>}
-          <div className='grid grid-cols-1 md:grid-cols-2 justify-between items-center gap-5 mt-5'>
-          {similarBlogs.map(blog => (
-            
+      </article>
+
+      <section className="container mx-auto max-w-screen-lg px-4 sm:px-6 mt-12">
+        {similarBlogs.length > 0 && (
+          <>
+            <h2 className="text-xl sm:text-2xl font-bold text-primary mb-4">Similar reads</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {similarBlogs.map(blog => (
                 <BlogCard
                   key={blog.id}
                   title={blog.title}
@@ -103,10 +110,11 @@ export default function BlogDetailPage({ params }) {
                   technologies={blog.technologies}
                   link={`${blog.id}`}
                 />
-            
-            ))}
-          </div>
-      </div>
+              ))}
+            </div>
+          </>
+        )}
+      </section>
     </>
   );
 }

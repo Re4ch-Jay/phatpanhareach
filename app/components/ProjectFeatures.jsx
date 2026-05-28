@@ -1,44 +1,61 @@
 import React from 'react'
-import Card from "./Card"
+import { SectionHeader } from './Experiences'
+
+const PROJECTS = [
+  { title: 'Akiko', description: 'A minimal JavaScript CLI package', technologies: ['JS', 'Node', 'CLI'], link: 'https://www.npmjs.com/package/akiko' },
+  { title: 'Hashiru', description: 'A CLI starter kit for Express.js', technologies: ['JS', 'Node', 'CLI'], link: 'https://github.com/Re4ch-Jay/hashiru' },
+  { title: 'FakerKH', description: 'JavaScript library for Khmer random words', technologies: ['JS', 'Node', 'Lib'], link: 'https://github.com/Re4ch-Jay/FakerKH' },
+  { title: 'King-Typer', description: 'Typing test with accuracy, WPM, and head-to-head challenges', technologies: ['Laravel', 'React', 'MySQL'], link: 'https://github.com/Re4ch-Jay/King-Typer' },
+  { title: 'Meditation Mobile App', description: 'An app that helps you calm, relax, and focus', technologies: ['Flutter', 'Mobile'], link: 'https://github.com/Re4ch-Jay/Meditation_App' },
+  { title: 'Get Me QR', description: 'Generate your own QR codes', technologies: ['React'], link: 'https://getmeqr.vercel.app/' },
+  { title: 'Book Store Mobile App', description: 'Buy books from home', technologies: ['Flutter'], link: 'https://github.com/Re4ch-Jay/Book-Store' },
+  { title: 'Ecommerce Mobile App', description: 'Shop from home', technologies: ['Flutter'], link: 'https://github.com/Re4ch-Jay/Ecommerce-Flutter' },
+  { title: 'Student Management System', description: 'Minimal SMS with auth & permissions', technologies: ['Laravel', 'MySQL'], link: 'https://github.com/Re4ch-Jay/Simple-Student-Management' },
+  { title: 'Banking System', description: 'Simple banking system', technologies: ['Spring Boot'], link: 'https://github.com/Re4ch-Jay/Banking-System' },
+]
+
 export default function ProjectFeatures() {
   return (
-    <div className="container mx-auto max-w-screen-lg px-4 py-5">
-        <p className="text-white text-center text-lg">I actively contribute to a range of open-source projects. While success may be elusive for now, I'm committed to continuous efforts and growth.</p>
-        <div className="grid grid-cols-2 justify-center items-center gap-5 mt-10 cursor-pointer">
-          <ProjectCard title="Akiko" description="A minimal JavaScript CLI Package" technologies={['JS', 'Node', 'CLI']} link='https://www.npmjs.com/package/akiko' />
-          <ProjectCard title="Hashiru" description="A CLI Starter Kit For Express.js" technologies={['JS', 'Node', 'CLI']} link='https://github.com/Re4ch-Jay/hashiru' />
-          <ProjectCard title="FakerKH" description="JavaScript library for Khmer Random Word" technologies={['JS', 'Node', 'Lib']} link='https://github.com/Re4ch-Jay/FakerKH' />
-          <ProjectCard title="King-Typer" description="A website for typing test based, accuracy, wpm and challenge with others" technologies={['Laravel', 'React', 'MySQL']} link='https://github.com/Re4ch-Jay/King-Typer' />
-          <ProjectCard title="Meditation Mobile App" description="An app that make you calm, relief, relax, and focus 🧘" technologies={['Flutter', 'Mobile App']} link='https://github.com/Re4ch-Jay/Meditation_App' />
-          <ProjectCard title="Get Me QR" description="Software tool to generate your QR Code" technologies={['React']} link='https://getmeqr.vercel.app/' />
-          <ProjectCard title="Book Store Mobile App" description="Buy book from home is better!" technologies={['Flutter']} link='https://github.com/Re4ch-Jay/Book-Store' />
-          <ProjectCard title="Ecommerce Mobile App" description="Shopping at home is better!" technologies={['Flutter']} link='https://github.com/Re4ch-Jay/Ecommerce-Flutter' />
-          <ProjectCard title="Student Management System" description="Minimal Student Management System with Authentication & Authorization" technologies={['Laravel', 'MySQL']} link='https://github.com/Re4ch-Jay/Simple-Student-Management' />
-          <ProjectCard title="Banking System" description="Simple Banking System" technologies={['Spring Boot']} link='https://github.com/Re4ch-Jay/Banking-System' />
-        </div>
-    </div>
+    <section className="container mx-auto max-w-screen-lg px-4 py-12 sm:py-16">
+      <SectionHeader
+        eyebrow="Projects"
+        title="Things I've shipped"
+        description="A mix of open-source tools, side projects, and learning playgrounds."
+      />
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {PROJECTS.map((p, i) => (
+          <ProjectCard key={i} {...p} />
+        ))}
+      </div>
+    </section>
   )
 }
 
-
-
-function ProjectCard({title, description, technologies, link}) {
+function ProjectCard({ title, description, technologies, link }) {
   return (
-    <a href={link} target="_blank" >
-    <Card className="h-72 md:h-36">
-      <>
-        <p className="text-xl font-bold">{title}</p>
-        <p className="text-base">{description}</p>
-        <div className="flex flex-row flex-wrap mt-3 gap-1">
-          {technologies.map((technology, index) => (
-            <p key={index} className="px-8 text-center bg-gray-800 text-white text-sm rounded">
-              {technology}
-            </p>
-          ))}
-    
-        </div>
-      </>
-    </Card>
+    <a
+      href={link}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="group rounded-2xl border border-border bg-surface p-5 shadow-card hover:shadow-card-hover hover:bg-surface-hover transition-all"
+    >
+      <div className="flex items-start justify-between gap-3">
+        <h3 className="text-base sm:text-lg font-semibold text-primary">{title}</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-muted group-hover:text-accent transition-colors shrink-0 mt-1" aria-hidden="true">
+          <path d="M7 17L17 7M7 7h10v10" />
+        </svg>
+      </div>
+      <p className="mt-1.5 text-sm text-muted leading-relaxed">{description}</p>
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {technologies.map((tech, i) => (
+          <span
+            key={i}
+            className="rounded-full border border-border bg-bg-soft px-2.5 py-0.5 text-xs font-medium text-muted"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
     </a>
   )
 }

@@ -1,10 +1,15 @@
 import React from 'react';
 
-export default function Card({ children, ...props }) {
+export default function Card({ children, className = '', ...props }) {
   return (
-    <div className={"p-4 bg-black text-white rounded shadow-lg hover:shadow-lg hover:bg-gray-900 transition-all duration-300 " + props.className}>
+    <div
+      {...props}
+      className={
+        'rounded-xl border border-border bg-surface text-primary p-4 shadow-card hover:shadow-card-hover hover:bg-surface-hover transition-all duration-200 ' +
+        className
+      }
+    >
       {children}
     </div>
   );
 }
- 

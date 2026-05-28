@@ -1,90 +1,51 @@
-"use client"
-import React, {useState} from 'react'
+import React from 'react'
+import Link from 'next/link'
+import { gallery } from '@/data/gallery'
+import { SectionHeader } from './Experiences'
+import GalleryGrid from './GalleryGrid'
+
+const PREVIEW_COUNT = 6
 
 export default function FashionGallery() {
-  const galleryItems = [
-    { src: '/assets/galleries/img1.jpeg', fit: 'Elegant summer dress' },
-    { src: '/assets/galleries/img2.jpeg', fit: 'With My Dog' },
-    { src: '/assets/galleries/img3.jpeg', fit: 'Stylish evening gown' },
-    { src: '/assets/galleries/img4.jpeg', fit: 'Trendy streetwear look' },
-    { src: '/assets/galleries/img5.jpeg', fit: 'Casual day outfit' },
-    { src: '/assets/galleries/img6.jpeg', fit: 'Khmer Tradition Dress' },
-  ]
-  const [selected, setSelected] = useState(null)
-
-  const handlePrev = (e) => {
-    e.stopPropagation()
-    if (selected > 0) setSelected(selected - 1)
-  }
-
-  const handleNext = (e) => {
-    e.stopPropagation()
-    if (selected < galleryItems.length - 1) setSelected(selected + 1)
-  }
+  const preview = gallery.slice(0, PREVIEW_COUNT)
+  const remaining = gallery.length - preview.length
 
   return (
-    <section className="p-8 rounded-lg shadow-lg mx-auto max-w-screen-lg mt-20 bg-gray-800">
-      <h2 className="text-3xl font-bold mb-2 text-center text-white">Fashion Gallery</h2>
-      <p className="text-white text-center mb-8">I enjoy exploring fashion and capturing my style through photography. Here’s a glimpse into my creative side.</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {galleryItems.map((item, idx) => (
-          <div
-            key={idx}
-            className="relative rounded-xl overflow-hidden shadow-md hover:scale-105 transition-transform duration-200 bg-gray-50 cursor-pointer"
-            onClick={() => setSelected(idx)}
-          >
-            <img
-              src={item.src}
-              alt={item.fit}
-              className="w-full h-40 sm:h-48 md:h-56 lg:h-64 object-cover rounded-lg"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-200">
-              <span className="text-white text-lg font-semibold px-4 text-center">{item.fit}</span>
-            </div>
-          </div>
-        ))}
+    <section className="container mx-auto max-w-screen-lg px-4 py-12 sm:py-16">
+      <SectionHeader
+        eyebrow="Off the keyboard"
+        title="Fashion gallery"
+        description="A glimpse into my creative side — fashion and photography."
+      />
+      <div className="mt-8">
+        <GalleryGrid items={preview} />
       </div>
-      {selected !== null && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          onClick={() => setSelected(null)}
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="/gallery"
+          className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-semibold text-primary hover:bg-surface-hover transition-colors"
         >
-          <div className="relative flex flex-col items-center" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center">
-              <button
-                className="bg-white text-black px-3 py-2 rounded-full font-bold mx-2 disabled:opacity-50"
-                onClick={handlePrev}
-                disabled={selected === 0}
-                aria-label="Previous"
-              >
-                &#8592;
-              </button>
-              <img
-                src={galleryItems[selected].src}
-                alt={galleryItems[selected].fit}
-                className="max-w-full max-h-[80vh] rounded-lg"
-              />
-              <button
-                className="bg-white text-black px-3 py-2 rounded-full font-bold mx-2 disabled:opacity-50"
-                onClick={handleNext}
-                disabled={selected === galleryItems.length - 1}
-                aria-label="Next"
-              >
-                &#8594;
-              </button>
-              <button
-                className="absolute top-2 right-2 bg-white rounded-full px-3 py-1 text-black font-bold"
-                onClick={() => setSelected(null)}
-              >
-                ×
-              </button>
-            </div>
-            <div className="mt-4 text-white text-center text-lg font-semibold max-w-full">
-              {galleryItems[selected].fit}
-            </div>
-          </div>
-        </div>
-      )}
+          See full gallery
+          {remaining > 0 && (
+            <span className="text-xs font-medium text-muted">+{remaining} more</span>
+          )}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </Link>
+      </div>
     </section>
   )
 }

@@ -1,25 +1,58 @@
 import React from 'react'
+import { SectionHeader } from './Experiences'
+
+const ITEMS = [
+  {
+    title: 'Phnom Penh Thmey High School',
+    year: '2015 — 2021',
+    description: 'My high school years — formative friendships and a Grade B finish.',
+  },
+  {
+    title: 'Western International School',
+    year: '2018 — 2020',
+    description: 'GEP program.',
+  },
+  {
+    title: 'Australian Centre of Education',
+    year: '2020 — 2021',
+    description: 'GEP program and IELTS preparation. Scored 5.5.',
+  },
+  {
+    title: 'Cambodia Academy of Digital Technology',
+    year: '2021 — Now',
+    description: 'Where my software development career started.',
+  },
+]
 
 export default function Educations() {
   return (
-    <div className="container mx-auto max-w-screen-lg px-4 py-5">
-        <p className="text-white text-2xl font-bold">Educations</p>
-        <Education title='Phnom Penh Thmey High School' year='2015 - 2021' description='My high school life was the most amazing time in my life. I made so many friends and enjoyed that time so much. At the end of my high school life, I got grade B.'  />
-        <Education title='Western Internation School' year='2018 - 2020' description='I studied GEP.'  />
-        <Education title='Australian Center of Education' year='2020 - 2021' description='I studied GEP and preparation for IELTS, I got 5.5 bands..'  />
-        <Education title='Cambodia Academy of Digital Technology' year='2021 - Now' description='My Software Development career start here.'  />
-    </div>
+    <section className="container mx-auto max-w-screen-lg px-4 py-12 sm:py-16">
+      <SectionHeader
+        eyebrow="Education"
+        title="Where I learned"
+      />
+      <div className="mt-8 relative pl-6">
+        <div aria-hidden="true" className="absolute left-2 top-1 bottom-1 w-px bg-border" />
+        <div className="space-y-6">
+          {ITEMS.map((item, idx) => (
+            <Education key={idx} {...item} />
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 
-
-function Education({title, year, description}) {
+function Education({ title, year, description }) {
   return (
-    <div className="my-5">
-        <h1 className="text-lg text-white">{title}</h1>
-        <h4 className="text-yellow-500">{year}</h4>
-        <p className="text-white">{description}</p>
+    <div className="relative">
+      <span
+        aria-hidden="true"
+        className="absolute -left-[1.05rem] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-bg"
+      />
+      <h3 className="text-base sm:text-lg font-semibold text-primary">{title}</h3>
+      <p className="text-xs sm:text-sm font-medium text-accent mt-0.5">{year}</p>
+      <p className="mt-1.5 text-sm sm:text-base text-muted leading-relaxed">{description}</p>
     </div>
   )
 }
-

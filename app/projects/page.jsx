@@ -22,7 +22,7 @@ export const metadata  = {
       secureUrl: defaultImage,
       width: 1200,
       height: 630,
-      alt: 'Phat Panhareach',
+      alt: 'Panhareach Phat',
     }
   },
   twitter: {
@@ -33,7 +33,7 @@ export const metadata  = {
     creator: '@panhareach_phat',
     images: {
       url: defaultImage,
-      alt: 'Phat Panhareach',
+      alt: 'Panhareach Phat',
     }
   },
 }

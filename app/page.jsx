@@ -4,11 +4,11 @@ import Hero from "./components/Hero";
 import ProjectFeatures from "./components/ProjectFeatures";
 import SocialLinks from "./components/SocialLinks";
 import Technologies from "./components/Technologies";
-import FashionGallery from "@/app/components/FashionGallery";
+import FashionGallery from "./components/FashionGallery";
 
 export default function Home() {
   return (
-    <div> 
+    <>
       <Hero />
       <SocialLinks />
       <Experiences />
@@ -16,6 +16,6 @@ export default function Home() {
       <Educations />
       <Technologies />
       <FashionGallery />
-    </div>
+    </>
   )
 }

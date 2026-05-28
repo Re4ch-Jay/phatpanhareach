@@ -2,12 +2,13 @@ import './globals.css'
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import { ThemeProvider, themeInitScript } from './components/ThemeProvider'
 import { defaultImage, homeUrl } from './util'
 
 export const metadata  = {
   title: {
-    default: "Portfolio | Phat Panhareach",
-    template: "%s | Phat Panhareach",
+    default: "Portfolio | Panhareach Phat",
+    template: "%s | Panhareach Phat",
   },
   description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
   icons: {
@@ -20,8 +21,8 @@ export const metadata  = {
   },
   openGraph: {
     title: {
-      default: "Portfolio | Phat Panhareach",
-      template: "%s | Phat Panhareach",
+      default: "Portfolio | Panhareach Phat",
+      template: "%s | Panhareach Phat",
     },
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     type: "website",
@@ -35,7 +36,7 @@ export const metadata  = {
         secureUrl: defaultImage,
         width: 1200,
         height: 627,
-        alt: 'Phat Panhareach',
+        alt: 'Panhareach Phat',
       }
     ],
   },
@@ -43,27 +44,38 @@ export const metadata  = {
     card: 'summary_large_image',
     site: '@panhareach_phat',
     title: {
-      default: "Portfolio | Phat Panhareach",
-      template: "%s | Phat Panhareach",
+      default: "Portfolio | Panhareach Phat",
+      template: "%s | Panhareach Phat",
     },
     description: "I'm an enthusiastic learner who thrives on exploring novel technologies.",
     creator: '@panhareach_phat',
     images: {
       url: defaultImage,
-      alt: 'Phat Panhareach',
+      alt: 'Panhareach Phat',
     }
   },
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body suppressHydrationWarning={true}>
-          <div className="bg-gradient-to-br from-gray-900 to-gray-500 min-h-screen">
-            <Navbar/>
-            {children}
-            <Footer/>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
+      <body suppressHydrationWarning={true} className="bg-bg text-primary">
+        <ThemeProvider>
+          <div className="relative min-h-screen">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none fixed inset-x-0 top-0 h-[480px] bg-hero-glow"
+            />
+            <div className="relative">
+              <Navbar />
+              <main>{children}</main>
+              <Footer />
+            </div>
           </div>
+        </ThemeProvider>
       </body>
     </html>
   )
