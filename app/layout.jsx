@@ -2,6 +2,7 @@ import './globals.css'
 import React from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import { ThemeProvider, themeInitScript } from './components/ThemeProvider'
 import { defaultImage, homeUrl } from './util'
 
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
               <Navbar />
               <main>{children}</main>
               <Footer />
+              <ScrollToTop />
             </div>
           </div>
         </ThemeProvider>

@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { blogs } from '@/data/blog';
+import { gallery } from '@/data/gallery'
+import { certifications } from '@/data/certifications'
 
 async function getData(url) {
   const res = await fetch(url)
@@ -20,6 +22,11 @@ export default async function Statistics() {
     { title: 'GitHub Stars', number: gitHubStars.stars, link: 'https://github.com/Re4ch-Jay', external: true },
     { title: 'GitHub Forks', number: gitHubStars.forks, link: 'https://github.com/Re4ch-Jay', external: true },
     { title: 'Blogs', number: blogs.length, link: '/blogs', external: false },
+    { title: 'Gallery', number: gallery.length, link: '/gallery', external: false },
+    { title: 'Certifications', number: certifications.length, link: '/certifications', external: false },
+    { title: 'LinkedIn Followers', number: '400+', link: 'https://www.linkedin.com/in/panhareach-phat-a243452a5/', external: true },
+    { title: 'LinkedIn Connections', number: '300+', link: 'https://www.linkedin.com/in/panhareach-phat-a243452a5/', external: true },
+    { title: 'Instagram Followers', number: '250+', link: 'https://www.instagram.com/p.p.reach/', external: true },
   ]
 
   return (
@@ -46,7 +53,11 @@ function StatisticCard({ title, number, link, external }) {
     <>
       <p className="text-xs sm:text-sm font-medium text-muted">{title}</p>
       <p className="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight text-primary">
-        {Number.isFinite(number) ? number : '—'}
+        {typeof number === 'string'
+          ? number
+          : Number.isFinite(number)
+            ? number
+            : '—'}
       </p>
     </>
   )

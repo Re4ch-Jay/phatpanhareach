@@ -7,7 +7,8 @@ import GalleryGrid from './GalleryGrid'
 const PREVIEW_COUNT = 6
 
 export default function FashionGallery() {
-  const preview = gallery.slice(0, PREVIEW_COUNT)
+  const featured = gallery.filter((item) => item.isFeature)
+  const preview = (featured.length > 0 ? featured : gallery).slice(0, PREVIEW_COUNT)
   const remaining = gallery.length - preview.length
 
   return (
