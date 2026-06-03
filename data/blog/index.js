@@ -8,4 +8,5 @@ export const blogs = [
     {id: "Programming-and-Creativity", title: "Programming and Creativity", description: "Programming is not merely a logical exercise", technologies: ["Guide"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/programming.png?raw=true"},
     {id: "Coding-Club", title: "Life as Coding Club Leader", description: "As leaders of the Coding Club at CADT", technologies: ["Life"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/codingclub.png?raw=true"},
     {id: "Javascript-Sorting", title: "Data Sorting in JavaScript", description: "Sorting data is a fundamental operation in programming", technologies: ["JavaScript"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/javascript.png?raw=true"},
+    {id: "4-Years-at-CADT", title: "4 Years at Cambodia Academy of Digital Technology", description: "Looking back on four transformative years at CADT, the friendships, the late-night code, and the person I became.", technologies: ["Life"], image: "https://github.com/Re4ch-Jay/phatpanhareach/blob/main/public/assets/cadt.jpg?raw=true"},
 ]
