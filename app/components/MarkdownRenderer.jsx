@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 export default function MarkdownRenderer({ content }) {
   return (
     <div className="container mx-auto max-w-screen-lg px-4 sm:px-6 py-8 sm:py-10 bg-surface border border-border rounded-2xl shadow-card mt-10">
-      <ReactMarkdown
+      <div
         className={[
           'max-w-none prose prose-sm sm:prose-base',
           'prose-headings:text-primary',
@@ -18,8 +18,8 @@ export default function MarkdownRenderer({ content }) {
           'prose-hr:border-border',
         ].join(' ')}
       >
-        {content}
-      </ReactMarkdown>
+        <ReactMarkdown>{content}</ReactMarkdown>
+      </div>
     </div>
   )
 }

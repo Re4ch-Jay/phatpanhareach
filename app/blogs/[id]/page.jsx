@@ -5,7 +5,8 @@ import { blogs } from '@/data/blog';
 
 export async function generateMetadata({ params }, parent) {
   try {
-    const matchingBlog = blogs.find(blog => blog.id === params.id);
+    const { id } = await params;
+    const matchingBlog = blogs.find(blog => blog.id === id);
 
     const image = matchingBlog.image || defaultImage;
 
@@ -68,8 +69,9 @@ export async function generateMetadata({ params }, parent) {
   }
 }
 
-export default function BlogDetailPage({ params }) {
-  const matchingBlog = blogs.find(blog => blog.id === params.id);
+export default async function BlogDetailPage({ params }) {
+  const { id } = await params;
+  const matchingBlog = blogs.find(blog => blog.id === id);
   const image = matchingBlog?.image || '/banner.png';
 
   const similarBlogs = matchingBlog
@@ -89,12 +91,12 @@ export default function BlogDetailPage({ params }) {
       <article className="container mx-auto max-w-screen-lg px-4 sm:px-6 py-8 sm:py-10 mt-10 bg-surface border border-border rounded-2xl shadow-card">
         <div className="flex justify-center items-center">
           <img
-            alt={params.id}
+            alt={id}
             src={image}
             className="w-72 md:w-auto md:h-96 object-contain rounded-xl"
           />
         </div>
-        <BlogDetail fileName={params.id} />
+        <BlogDetail fileName={id} />
       </article>
 
       <section className="container mx-auto max-w-screen-lg px-4 sm:px-6 mt-12">
