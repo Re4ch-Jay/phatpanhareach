@@ -25,7 +25,7 @@ export default async function Statistics() {
     { title: 'Gallery', number: gallery.length, link: '/gallery', external: false },
     { title: 'Certifications', number: certifications.length, link: '/certifications', external: false },
     { title: 'LinkedIn Followers', number: '400+', link: 'https://www.linkedin.com/in/panhareach-phat-a243452a5/', external: true },
-    { title: 'LinkedIn Connections', number: '300+', link: 'https://www.linkedin.com/in/panhareach-phat-a243452a5/', external: true },
+    { title: 'LinkedIn Connections', number: '400+', link: 'https://www.linkedin.com/in/panhareach-phat-a243452a5/', external: true },
     { title: 'Instagram Followers', number: '250+', link: 'https://www.instagram.com/p.p.reach/', external: true },
   ]
 
